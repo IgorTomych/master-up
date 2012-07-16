@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		101C323A1587A6B700BC0DBA /* IconDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 101C32391587A6B700BC0DBA /* IconDownloader.m */; };
+		101C32401587A79200BC0DBA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101C323F1587A79200BC0DBA /* CFNetwork.framework */; };
+		101C32431587A87900BC0DBA /* ParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 101C32421587A87900BC0DBA /* ParseOperation.m */; };
+		101C32461587B4D000BC0DBA /* AppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 101C32451587B4CF00BC0DBA /* AppRecord.m */; };
 		1069FDB515810E4B00E36A7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1069FDB415810E4B00E36A7C /* UIKit.framework */; };
 		1069FDB715810E4B00E36A7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1069FDB615810E4B00E36A7C /* Foundation.framework */; };
 		1069FDB915810E4B00E36A7C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1069FDB815810E4B00E36A7C /* CoreGraphics.framework */; };
@@ -22,7 +26,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1069FDB015810E4B00E36A7C /* Lecture6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lecture6.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		101C32381587A6B700BC0DBA /* IconDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconDownloader.h; sourceTree = "<group>"; };
+		101C32391587A6B700BC0DBA /* IconDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconDownloader.m; sourceTree = "<group>"; };
+		101C323F1587A79200BC0DBA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		101C32411587A87900BC0DBA /* ParseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseOperation.h; sourceTree = "<group>"; };
+		101C32421587A87900BC0DBA /* ParseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseOperation.m; sourceTree = "<group>"; };
+		101C32441587B4CF00BC0DBA /* AppRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppRecord.h; sourceTree = "<group>"; };
+		101C32451587B4CF00BC0DBA /* AppRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppRecord.m; sourceTree = "<group>"; };
+		1069FDB015810E4B00E36A7C /* Lecture7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lecture7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1069FDB415810E4B00E36A7C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1069FDB615810E4B00E36A7C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1069FDB815810E4B00E36A7C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -47,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				101C32401587A79200BC0DBA /* CFNetwork.framework in Frameworks */,
 				1069FDB515810E4B00E36A7C /* UIKit.framework in Frameworks */,
 				1069FDB715810E4B00E36A7C /* Foundation.framework in Frameworks */,
 				1069FDB915810E4B00E36A7C /* CoreGraphics.framework in Frameworks */,
@@ -68,7 +80,7 @@
 		1069FDB115810E4B00E36A7C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1069FDB015810E4B00E36A7C /* Lecture6.app */,
+				1069FDB015810E4B00E36A7C /* Lecture7.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,6 +88,7 @@
 		1069FDB315810E4B00E36A7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				101C323F1587A79200BC0DBA /* CFNetwork.framework */,
 				1069FDB415810E4B00E36A7C /* UIKit.framework */,
 				1069FDB615810E4B00E36A7C /* Foundation.framework */,
 				1069FDB815810E4B00E36A7C /* CoreGraphics.framework */,
@@ -97,6 +110,12 @@
 				1069FDD215810E4B00E36A7C /* DetailViewController_iPhone.xib */,
 				1069FDD515810E4B00E36A7C /* DetailViewController_iPad.xib */,
 				1069FDBB15810E4B00E36A7C /* Supporting Files */,
+				101C32381587A6B700BC0DBA /* IconDownloader.h */,
+				101C32391587A6B700BC0DBA /* IconDownloader.m */,
+				101C32411587A87900BC0DBA /* ParseOperation.h */,
+				101C32421587A87900BC0DBA /* ParseOperation.m */,
+				101C32441587B4CF00BC0DBA /* AppRecord.h */,
+				101C32451587B4CF00BC0DBA /* AppRecord.m */,
 			);
 			path = Lecture6;
 			sourceTree = "<group>";
@@ -115,9 +134,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1069FDAF15810E4B00E36A7C /* Lecture6 */ = {
+		1069FDAF15810E4B00E36A7C /* Lecture7 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1069FDDA15810E4B00E36A7C /* Build configuration list for PBXNativeTarget "Lecture6" */;
+			buildConfigurationList = 1069FDDA15810E4B00E36A7C /* Build configuration list for PBXNativeTarget "Lecture7" */;
 			buildPhases = (
 				1069FDAC15810E4B00E36A7C /* Sources */,
 				1069FDAD15810E4B00E36A7C /* Frameworks */,
@@ -127,9 +146,9 @@
 			);
 			dependencies = (
 			);
-			name = Lecture6;
+			name = Lecture7;
 			productName = Lecture6;
-			productReference = 1069FDB015810E4B00E36A7C /* Lecture6.app */;
+			productReference = 1069FDB015810E4B00E36A7C /* Lecture7.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -152,7 +171,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1069FDAF15810E4B00E36A7C /* Lecture6 */,
+				1069FDAF15810E4B00E36A7C /* Lecture7 */,
 			);
 		};
 /* End PBXProject section */
@@ -181,6 +200,9 @@
 				1069FDC515810E4B00E36A7C /* AppDelegate.m in Sources */,
 				1069FDC815810E4B00E36A7C /* MasterViewController.m in Sources */,
 				1069FDCB15810E4B00E36A7C /* DetailViewController.m in Sources */,
+				101C323A1587A6B700BC0DBA /* IconDownloader.m in Sources */,
+				101C32431587A87900BC0DBA /* ParseOperation.m in Sources */,
+				101C32461587B4D000BC0DBA /* AppRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,13 +333,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1069FDDA15810E4B00E36A7C /* Build configuration list for PBXNativeTarget "Lecture6" */ = {
+		1069FDDA15810E4B00E36A7C /* Build configuration list for PBXNativeTarget "Lecture7" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1069FDDB15810E4B00E36A7C /* Debug */,
 				1069FDDC15810E4B00E36A7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

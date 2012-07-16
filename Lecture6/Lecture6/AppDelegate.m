@@ -9,14 +9,26 @@
 #import "AppDelegate.h"
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
+
+#import <CFNetwork/CFNetwork.h>
+
+#import "ParseOperation.h"
+
+static NSString *const TopPaidAppsFeed =
+@"http://phobos.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/toppaidapplications/limit=75/xml";
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize navigationController = _navigationController;
 @synthesize splitViewController = _splitViewController;
+
+@synthesize appRecords = _appRecords;
+@synthesize appListData = _appListData;
+@synthesize queue = _queue;
+@synthesize appListFeedConnection = _appListFeedConnection;
+
 
 - (void)dealloc
 {
@@ -31,36 +43,67 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        MasterViewController *masterViewController = [[[MasterViewController alloc] initWithNibName:@"MasterViewController_iPhone" bundle:nil] autorelease];
-        self.navigationController = [[[UINavigationController alloc] initWithRootViewController:masterViewController] autorelease];
-        self.window.rootViewController = self.navigationController;
-    } 
-    else if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) 
-    {
-        MasterViewController *masterViewController = [[[MasterViewController alloc] initWithNibName:@"MasterViewController_iPad" bundle:nil] autorelease];
-        UINavigationController *masterNavigationController = [[[UINavigationController alloc] initWithRootViewController:masterViewController] autorelease];
-        
-        DetailViewController *detailViewController = [[[DetailViewController alloc] initWithNibName:@"DetailViewController_iPad" bundle:nil] autorelease];
-        UINavigationController *detailNavigationController = [[[UINavigationController alloc] initWithRootViewController:detailViewController] autorelease];
-    	
-    	masterViewController.detailViewController = detailViewController;
-    	
-        self.splitViewController = [[[UISplitViewController alloc] init] autorelease];
-        self.splitViewController.delegate = detailViewController;
-        self.splitViewController.viewControllers = [NSArray arrayWithObjects:masterNavigationController, detailNavigationController, nil];
-        
-        self.window.rootViewController = self.splitViewController;
-    }
+
+    MasterViewController *masterViewController = [[[MasterViewController alloc] initWithNibName:@"MasterViewController_iPhone" bundle:nil] autorelease];
+    self.navigationController = [[[UINavigationController alloc] initWithRootViewController:masterViewController] autorelease];
+    self.window.rootViewController = self.navigationController;    
     
     [self.window makeKeyAndVisible];
+    
+    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:TopPaidAppsFeed]];
+    
+    self.appListFeedConnection = [[[NSURLConnection alloc] initWithRequest:request delegate:self] autorelease];
+    
     return YES;
 }
 
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    self.appListData = [NSMutableData data];    // start off with new data
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [_appListData appendData:data];  // append incoming data
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    self.appListFeedConnection = nil;   // release our connection
+ 
+    NSString* output = [[NSString alloc] initWithData:_appListData encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"%@", output);
+    
+    // create the queue to run our ParseOperation
+    self.queue = [[NSOperationQueue alloc] init];
+    
+    ParseOperation *parser = [[ParseOperation alloc] initWithData:_appListData delegate:self];
+
+    [_queue addOperation:parser]; // this will start the "ParseOperation"
+
+    [parser release];
+    
+    self.appListData = nil;
+}
+
+-(void)didFinishParsing:(NSArray *)appList {
+    [self performSelectorOnMainThread:@selector(handleLoadedApps:) withObject:appList waitUntilDone:NO];
+    
+    self.queue = nil;   // we are finished
+}
+
+- (void)handleLoadedApps:(NSArray *)loadedApps
+{
+    self.appRecords = [[NSMutableArray alloc] init];
+    
+    [self.appRecords addObjectsFromArray:loadedApps];
+    NSLog(@"%@", self.appRecords);
+}
+
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
