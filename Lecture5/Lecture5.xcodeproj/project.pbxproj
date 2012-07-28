@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1026AB2515C3DC6200E17B7A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1026AB2415C3DC6200E17B7A /* Icon.png */; };
+		1026AB2715C3DC6900E17B7A /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1026AB2615C3DC6900E17B7A /* Icon@2x.png */; };
 		1044D82215C05A80000E2D98 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1044D82115C05A80000E2D98 /* UIKit.framework */; };
 		1044D82415C05A80000E2D98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1044D82315C05A80000E2D98 /* Foundation.framework */; };
 		1044D82615C05A80000E2D98 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1044D82515C05A80000E2D98 /* CoreGraphics.framework */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1026AB2415C3DC6200E17B7A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		1026AB2615C3DC6900E17B7A /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		1044D81D15C05A80000E2D98 /* Lecture5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lecture5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1044D82115C05A80000E2D98 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1044D82315C05A80000E2D98 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -83,6 +87,8 @@
 		1044D81215C05A80000E2D98 = {
 			isa = PBXGroup;
 			children = (
+				1026AB2615C3DC6900E17B7A /* Icon@2x.png */,
+				1026AB2415C3DC6200E17B7A /* Icon.png */,
 				1044D82715C05A80000E2D98 /* Lecture5 */,
 				1044D82015C05A80000E2D98 /* Frameworks */,
 				1044D81E15C05A80000E2D98 /* Products */,
@@ -215,6 +221,8 @@
 				1044D82C15C05A80000E2D98 /* InfoPlist.strings in Resources */,
 				1044D83815C05A80000E2D98 /* ViewController.xib in Resources */,
 				1044D86715C07124000E2D98 /* cellDefault.png in Resources */,
+				1026AB2515C3DC6200E17B7A /* Icon.png in Resources */,
+				1026AB2715C3DC6900E17B7A /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +324,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lecture5/Lecture5-Prefix.pch";
 				INFOPLIST_FILE = "Lecture5/Lecture5-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -327,7 +337,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lecture5/Lecture5-Prefix.pch";
 				INFOPLIST_FILE = "Lecture5/Lecture5-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
