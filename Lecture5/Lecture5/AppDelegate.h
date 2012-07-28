@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@class ViewController;
+@class ApplicationsListController;
+@class DetailViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) ApplicationsListController *viewController;
+@property (strong, nonatomic) DetailViewController *detailsController;
 
-@property (strong, nonatomic) ViewController *viewController;
 
+-(void)loadApplicationFromDictionaryToDetailsController:(NSDictionary *)applicationData;
 @end

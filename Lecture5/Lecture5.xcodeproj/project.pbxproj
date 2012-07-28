@@ -15,8 +15,8 @@
 		1044D82C15C05A80000E2D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1044D82A15C05A80000E2D98 /* InfoPlist.strings */; };
 		1044D82E15C05A80000E2D98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1044D82D15C05A80000E2D98 /* main.m */; };
 		1044D83215C05A80000E2D98 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1044D83115C05A80000E2D98 /* AppDelegate.m */; };
-		1044D83515C05A80000E2D98 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1044D83415C05A80000E2D98 /* ViewController.m */; };
-		1044D83815C05A80000E2D98 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1044D83615C05A80000E2D98 /* ViewController.xib */; };
+		1044D83515C05A80000E2D98 /* ApplicationsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1044D83415C05A80000E2D98 /* ApplicationsListController.m */; };
+		1044D83815C05A80000E2D98 /* ApplicationsListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1044D83615C05A80000E2D98 /* ApplicationsListController.xib */; };
 		1044D85415C05C6E000E2D98 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1044D84015C05C6E000E2D98 /* AFHTTPClient.m */; };
 		1044D85515C05C6E000E2D98 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1044D84215C05C6E000E2D98 /* AFHTTPRequestOperation.m */; };
 		1044D85615C05C6E000E2D98 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1044D84415C05C6E000E2D98 /* AFImageRequestOperation.m */; };
@@ -28,6 +28,8 @@
 		1044D85C15C05C6E000E2D98 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1044D85115C05C6E000E2D98 /* AFXMLRequestOperation.m */; };
 		1044D85D15C05C6E000E2D98 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 1044D85315C05C6E000E2D98 /* UIImageView+AFNetworking.m */; };
 		1044D86715C07124000E2D98 /* cellDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 1044D86615C07124000E2D98 /* cellDefault.png */; };
+		10BFEB9815C3E8BC0071CE10 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BFEB9615C3E8BC0071CE10 /* DetailViewController.m */; };
+		10BFEB9915C3E8BC0071CE10 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10BFEB9715C3E8BC0071CE10 /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,9 +45,9 @@
 		1044D82F15C05A80000E2D98 /* Lecture5-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lecture5-Prefix.pch"; sourceTree = "<group>"; };
 		1044D83015C05A80000E2D98 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1044D83115C05A80000E2D98 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1044D83315C05A80000E2D98 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1044D83415C05A80000E2D98 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		1044D83715C05A80000E2D98 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		1044D83315C05A80000E2D98 /* ApplicationsListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationsListController.h; sourceTree = "<group>"; };
+		1044D83415C05A80000E2D98 /* ApplicationsListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationsListController.m; sourceTree = "<group>"; };
+		1044D83715C05A80000E2D98 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ApplicationsListController.xib; sourceTree = "<group>"; };
 		1044D83F15C05C6E000E2D98 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		1044D84015C05C6E000E2D98 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		1044D84115C05C6E000E2D98 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -68,6 +70,9 @@
 		1044D85215C05C6E000E2D98 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		1044D85315C05C6E000E2D98 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		1044D86615C07124000E2D98 /* cellDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellDefault.png; sourceTree = "<group>"; };
+		10BFEB9515C3E8BC0071CE10 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		10BFEB9615C3E8BC0071CE10 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		10BFEB9715C3E8BC0071CE10 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,10 +125,13 @@
 				1044D83E15C05C6E000E2D98 /* AFNetworking */,
 				1044D83015C05A80000E2D98 /* AppDelegate.h */,
 				1044D83115C05A80000E2D98 /* AppDelegate.m */,
-				1044D83315C05A80000E2D98 /* ViewController.h */,
-				1044D83415C05A80000E2D98 /* ViewController.m */,
-				1044D83615C05A80000E2D98 /* ViewController.xib */,
+				1044D83315C05A80000E2D98 /* ApplicationsListController.h */,
+				1044D83415C05A80000E2D98 /* ApplicationsListController.m */,
+				1044D83615C05A80000E2D98 /* ApplicationsListController.xib */,
 				1044D82815C05A80000E2D98 /* Supporting Files */,
+				10BFEB9515C3E8BC0071CE10 /* DetailViewController.h */,
+				10BFEB9615C3E8BC0071CE10 /* DetailViewController.m */,
+				10BFEB9715C3E8BC0071CE10 /* DetailViewController.xib */,
 			);
 			path = Lecture5;
 			sourceTree = "<group>";
@@ -219,10 +227,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1044D82C15C05A80000E2D98 /* InfoPlist.strings in Resources */,
-				1044D83815C05A80000E2D98 /* ViewController.xib in Resources */,
+				1044D83815C05A80000E2D98 /* ApplicationsListController.xib in Resources */,
 				1044D86715C07124000E2D98 /* cellDefault.png in Resources */,
 				1026AB2515C3DC6200E17B7A /* Icon.png in Resources */,
 				1026AB2715C3DC6900E17B7A /* Icon@2x.png in Resources */,
+				10BFEB9915C3E8BC0071CE10 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +244,7 @@
 			files = (
 				1044D82E15C05A80000E2D98 /* main.m in Sources */,
 				1044D83215C05A80000E2D98 /* AppDelegate.m in Sources */,
-				1044D83515C05A80000E2D98 /* ViewController.m in Sources */,
+				1044D83515C05A80000E2D98 /* ApplicationsListController.m in Sources */,
 				1044D85415C05C6E000E2D98 /* AFHTTPClient.m in Sources */,
 				1044D85515C05C6E000E2D98 /* AFHTTPRequestOperation.m in Sources */,
 				1044D85615C05C6E000E2D98 /* AFImageRequestOperation.m in Sources */,
@@ -246,6 +255,7 @@
 				1044D85B15C05C6E000E2D98 /* AFURLConnectionOperation.m in Sources */,
 				1044D85C15C05C6E000E2D98 /* AFXMLRequestOperation.m in Sources */,
 				1044D85D15C05C6E000E2D98 /* UIImageView+AFNetworking.m in Sources */,
+				10BFEB9815C3E8BC0071CE10 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,12 +270,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		1044D83615C05A80000E2D98 /* ViewController.xib */ = {
+		1044D83615C05A80000E2D98 /* ApplicationsListController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1044D83715C05A80000E2D98 /* en */,
 			);
-			name = ViewController.xib;
+			name = ApplicationsListController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

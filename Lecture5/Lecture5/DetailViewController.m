@@ -13,6 +13,7 @@
 @end
 
 @implementation DetailViewController
+@synthesize lblApplicationName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +32,7 @@
 
 - (void)viewDidUnload
 {
+    [self setLblApplicationName:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -38,7 +40,15 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
-
+-(void)loadApplicationFromDictionary:(NSDictionary *)applicationData {
+    NSLog(@"loading application info to UI");
+    NSLog(@"%@", applicationData);
+    lblApplicationName.text = [[applicationData objectForKey:@"title"] objectForKey:@"label"];
+}
+- (void)dealloc {
+    [lblApplicationName release];
+    [super dealloc];
+}
 @end

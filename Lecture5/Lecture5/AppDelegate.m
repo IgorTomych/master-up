@@ -8,9 +8,14 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "ApplicationsListController.h"
+#import "DetailViewController.h"
 
 @implementation AppDelegate
+
+@synthesize window = _window;
+@synthesize viewController = _viewController;
+@synthesize detailsController = _detailsController;
 
 - (void)dealloc
 {
@@ -22,15 +27,38 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
-
-    self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
-    UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     
-    self.window.rootViewController = navController;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        //ipad version
+        
+        UISplitViewController* splitController = [[UISplitViewController alloc] init];
+        
+        self.viewController = [[[ApplicationsListController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
+        
+        self.detailsController = [[[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil] autorelease];
+        
+        UINavigationController* navList = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+        UINavigationController* navDetails = [[UINavigationController alloc] initWithRootViewController:self.detailsController];
+
+        
+        splitController.viewControllers = [NSArray arrayWithObjects:navList, navDetails, nil];
+        
+        self.window.rootViewController = splitController;
+        
+        [splitController release];
+        [navList release];
+        [navDetails release];
+        
+    }
+    else {
+        //iphone version
+        self.viewController = [[[ApplicationsListController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
+        UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    
+        self.window.rootViewController = navController;
+    }
     
     [self.window makeKeyAndVisible];
-//    [UIApplication sharedApplication].statusBarHidden = NO;
     
     return YES;
 }
@@ -60,6 +88,10 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(void)loadApplicationFromDictionaryToDetailsController:(NSDictionary *)applicationData {
+    [self.detailsController loadApplicationFromDictionary:applicationData];
 }
 
 @end

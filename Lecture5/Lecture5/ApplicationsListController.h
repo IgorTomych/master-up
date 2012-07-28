@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UITableViewController
+@interface ApplicationsListController : UITableViewController
 
 @property (nonatomic, retain) NSArray* storeTopApps;
 

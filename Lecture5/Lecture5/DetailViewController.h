@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailViewController : UIViewController
+@property (retain, nonatomic) IBOutlet UILabel *lblApplicationName;
 
+-(void)loadApplicationFromDictionary:(NSDictionary*)applicationData;
 @end

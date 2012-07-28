@@ -6,15 +6,16 @@
 //  Copyright (c) 2012 Igor Tomych. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ApplicationsListController.h"
 #import "AFNetworking/AFNetworking.h"
 #import "AFNetworking/UIImageView+AFNetworking.h"
+#import "AppDelegate.h"
 
-@interface ViewController ()
+@interface ApplicationsListController ()
 
 @end
 
-@implementation ViewController
+@implementation ApplicationsListController
 
 @synthesize storeTopApps;
 
@@ -37,6 +38,12 @@
         self.storeTopApps = [NSArray arrayWithArray:[[responseObject objectForKey:@"feed"] objectForKey:@"entry"]];
         
         NSLog(@"downloaded! %d", [storeTopApps count]);
+        if ([storeTopApps count] > 0) {
+            
+            AppDelegate* appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+            [appDelegate loadApplicationFromDictionaryToDetailsController:[self.storeTopApps objectAtIndex:0]];
+            
+        }
         
         [self.tableView reloadData];
         
@@ -82,9 +89,6 @@
     [cell.imageView setImageWithURLRequest:request placeholderImage:[UIImage imageNamed:@"cellDefault.png"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
         NSLog(@"success!");
         cell.imageView.image = image;
-//        cell.imageView.image = image;
-        //[self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error){
         //
         NSLog(@"fail!");
@@ -92,6 +96,13 @@
     
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+ 
+    AppDelegate* appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    
+    [appDelegate loadApplicationFromDictionaryToDetailsController:[self.storeTopApps objectAtIndex:indexPath.row]];
 }
 
 - (void)viewDidUnload
@@ -102,7 +113,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return YES;
 }
 
 @end
