@@ -31,6 +31,7 @@
     AFJSONRequestOperation* operation = [[AFJSONRequestOperation alloc] initWithRequest:request];
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         //downloaded successfuly
         
         self.storeTopApps = [NSArray arrayWithArray:[[responseObject objectForKey:@"feed"] objectForKey:@"entry"]];
@@ -42,11 +43,12 @@
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Not downloaded!");
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     }];
     
     //start downloading
     [operation start];
-    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     //release
     [url release];
@@ -77,11 +79,11 @@
 
     NSURLRequest* request = [[NSURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:[[[storeObject objectForKey:@"im:image"] objectAtIndex:0] objectForKey:@"label"]]];
     
-    UIImageView* imageView = [[UIImageView alloc] init];
-    [imageView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+    [cell.imageView setImageWithURLRequest:request placeholderImage:[UIImage imageNamed:@"cellDefault.png"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        NSLog(@"success!");
         cell.imageView.image = image;
-
-        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//        cell.imageView.image = image;
+        //[self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error){
         //

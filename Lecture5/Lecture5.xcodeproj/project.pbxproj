@@ -25,7 +25,7 @@
 		1044D85B15C05C6E000E2D98 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1044D84F15C05C6E000E2D98 /* AFURLConnectionOperation.m */; };
 		1044D85C15C05C6E000E2D98 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1044D85115C05C6E000E2D98 /* AFXMLRequestOperation.m */; };
 		1044D85D15C05C6E000E2D98 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 1044D85315C05C6E000E2D98 /* UIImageView+AFNetworking.m */; };
-		1044D86715C07124000E2D98 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1044D86615C07124000E2D98 /* default.png */; };
+		1044D86715C07124000E2D98 /* cellDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 1044D86615C07124000E2D98 /* cellDefault.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +63,7 @@
 		1044D85115C05C6E000E2D98 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		1044D85215C05C6E000E2D98 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		1044D85315C05C6E000E2D98 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		1044D86615C07124000E2D98 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
+		1044D86615C07124000E2D98 /* cellDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellDefault.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +110,7 @@
 		1044D82715C05A80000E2D98 /* Lecture5 */ = {
 			isa = PBXGroup;
 			children = (
-				1044D86615C07124000E2D98 /* default.png */,
+				1044D86615C07124000E2D98 /* cellDefault.png */,
 				1044D83E15C05C6E000E2D98 /* AFNetworking */,
 				1044D83015C05A80000E2D98 /* AppDelegate.h */,
 				1044D83115C05A80000E2D98 /* AppDelegate.m */,
@@ -214,7 +214,7 @@
 			files = (
 				1044D82C15C05A80000E2D98 /* InfoPlist.strings in Resources */,
 				1044D83815C05A80000E2D98 /* ViewController.xib in Resources */,
-				1044D86715C07124000E2D98 /* default.png in Resources */,
+				1044D86715C07124000E2D98 /* cellDefault.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
